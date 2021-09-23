@@ -1,0 +1,11 @@
+asgiref==3.2.10
+Django==3.0.8
+pytz==2020.1
+sqlparse==0.3.1
+pymysql
+Pillow==7.2.0
+numpy==1.19.1
+imageio==2.9.0
+opencv-python==4.2.0.34
+scipy==1.5.1
+PyPDF2==1.26.0

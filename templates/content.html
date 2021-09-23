@@ -1,0 +1,469 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock %}</title>
+    {% block extra-head %}{% endblock %}
+    <meta name="author" content="Sinbros Technology" >
+    <!-- <base href="https://www.sinbros.com/"> -->
+
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="{%static 'image/favicon.png' %}" />
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css' %}"/>
+
+    <!-- animate -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/animate.css' %}"/>
+
+    <!-- owl-carousel -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/owl.carousel.css' %}">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/font-awesome.css' %}"/>
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/themify-icons.css' %}"/>
+
+    <!-- flaticon -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/flaticon.css' %}"/>
+
+
+    <!-- REVOLUTION LAYERS STYLES -->
+
+    <link rel="stylesheet" type="text/css" href="{%static 'revolution/css/rs6.css' %}">
+
+    <!-- prettyphoto -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/prettyPhoto.css' %}">
+
+    <!-- shortcodes -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/shortcodes.css' %}"/>
+
+    <!-- main -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/main.css' %}"/>
+
+    <!-- responsive -->
+    <link rel="stylesheet" type="text/css" href="{%static 'css/responsive.css' %}"/>
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <script type='application/ld+json'>
+    {
+      "@context":"https://schema.org",
+      "@type":"WebSite",
+      "@id":"https://www.sinbros.com/#website",
+      "url":"https://www.sinbros.com/",
+      "name":"Sinbros",
+      "potentialAction":
+      {
+        "@type":"SearchAction",
+        "target":"https://www.sinbros.com/?s={search_term_string}",
+        "query-input":"required name=search_term_string"
+      }
+    }
+    </script>
+    <script type='application/ld+json'>
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "url":"https://www.sinbros.com/",
+      "sameAs":[],
+      "@id":"https://www.sinbros.com/#organization",
+      "name":"Sinbros",
+      "logo":"https://sinbros.com/static/image/logo.png"
+    }
+    </script>
+
+
+    <script type='application/ld+json'>
+    {
+      "@context": "http://www.schema.org",
+      "@type": "LocalBusiness",
+      "name": "Sinbros",
+      "url": "https://www.sinbros.com/",
+      "telePhone": "+91 70168 71992",
+      "priceRange": "$$$",
+      "logo":"https://sinbros.com/static/image/logo.png",
+      "image": "https://sinbros.com/static/image/sinbros.jpg",
+      "description": "Sinbros are leading custom website Design & Development company in Surat. We provide Web Application, Magento E-commerce, WordPress , SEO, PPC, Social Media Marketing, Google G Suite Email, Web Security and many web solutions.",
+
+      "openingHours": "Mo, Tu, We, Th, Fr, Sa 10:00-06:00",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 7016871992",
+        "contactType": "Customer Service"
+      }
+    }
+     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": "Responsive Website Design & Development",
+      "url": "https://www.sinbros.com/",
+      "logo":"https://sinbros.com/static/image/logo.png",
+      "image": "https://sinbros.com/static/image/sinbros.jpg",
+      "description": "Sinbros provides professional Website development services from Surat, India. Almost all new websites are built using responsive design methods. If your existing Website is not built in this fashion then you are losing ground to your competitors.",
+      "brand": "Sinbros"
+    }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153650544-1"></script>-->
+    <!--<script>-->
+      <!--window.dataLayer = window.dataLayer || [];-->
+      <!--function gtag(){dataLayer.push(arguments);}-->
+      <!--gtag('js', new Date());-->
+    <!---->
+      <!--gtag('config', 'UA-153650544-1');-->
+    <!--</script>-->
+
+
+    {% block extra-css %}{% endblock %}
+
+</head>
+
+<body>
+
+<!--page start-->
+<div class="page">
+
+    <!-- preloader start -->
+    <!-- <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div> -->
+    <!-- preloader end -->
+
+    <!--header start-->
+    <header id="masthead" class="header ttm-header-style-01">
+        <!-- ttm-topbar-wrapper -->
+        <div class="ttm-topbar-wrapper clearfix">
+            <div class="container">
+                <div class="ttm-topbar-content">
+                    <ul class="top-contact text-left">
+                        <li><i class="fa fa-map-marker"></i>Surat</li>
+                        <li><i class="fa fa-envelope-o"></i><a href="mailto:contact@sinbros.com">contact@sinbros.com</a></li>
+                    </ul>
+                    <div class="topbar-right text-right">
+                        <ul class="top-contact">
+                            <li><i class="fa fa-clock-o"></i>Office Hour: 10:00am - 6:00pm</li>
+                        </ul>
+                        <div class="ttm-social-links-wrapper list-inline">
+                            <ul class="social-icons">
+                                <li><a href="https://www.instagram.com/sinbros_technology/" class=" tooltip-bottom" data-tooltip="Instagram"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li><a href="https://www.facebook.com/sinbrostechnology/" class=" tooltip-bottom" data-tooltip="Facebook"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li><a href="https://twitter.com/Sinbros1" class=" tooltip-bottom" data-tooltip="Twitter"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li><a href="https://www.youtube.com/channel/UC77T7ntbw-D3MHl1HMmBJog" class=" tooltip-bottom" data-tooltip="YouTube"><i class="fa fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- ttm-topbar-wrapper end -->
+        <!-- ttm-header-wrap -->
+        <div class="ttm-header-wrap">
+            <!-- ttm-stickable-header-w -->
+            <div id="ttm-stickable-header-w" class="ttm-stickable-header-w clearfix">
+                <div id="site-header-menu" class="site-header-menu">
+                    <div class="site-header-menu-inner ttm-stickable-header">
+                        <div class="container">
+                            <!-- site-branding -->
+                            <div class="site-branding">
+                                <a class="home-link" href="/" title="Altech" rel="home">
+                                    <img id="logo-img" class="img-center lazyload" data-src="{% static 'image/logo.png' %}" alt="logo">
+                                </a>
+                            </div><!-- site-branding end -->
+                            <!--site-navigation -->
+                            <div id="site-navigation" class="site-navigation">
+                                <div class="ttm-rt-contact">
+                                    <!-- header-icons -->
+                                    <div class="ttm-header-icons ">
+                                        <!--do not delete-->
+                                    </div><!-- header-icons end -->
+                                </div>
+                                <div class="ttm-menu-toggle">
+                                    <input type="checkbox" id="menu-toggle-form" />
+                                    <label for="menu-toggle-form" class="ttm-menu-toggle-block">
+                                        <span class="toggle-block toggle-blocks-1"></span>
+                                        <span class="toggle-block toggle-blocks-2"></span>
+                                        <span class="toggle-block toggle-blocks-3"></span>
+                                    </label>
+                                </div>
+                                <nav id="menu" class="menu">
+                                    <ul class="dropdown">
+                                        <!--<li {% block home-class %} {% endblock %}><a href="/">Home</a></li>-->
+
+                                        <li {% block learn-class %}{% endblock %}><a href="/learn">Learn</a>
+                                            <ul>
+                                                <li {% block python-class %}{% endblock %}><a href="/learn/python">Python</a></li>
+                                                <li {% block competitive-programming-class %}{% endblock %}><a href="/learn/competitive-programming">Competitive Programming</a></li>
+                                                <li {% block basic-programming-class %}{% endblock %}><a href="/learn/basic-programming">Basic Programming</a></li>
+                                                <li {% block pattern-programs-class %}{% endblock %}><a href="/learn/pattern-programs">Pattern Programs</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li {% block tools-class %}{% endblock %} ><a href="">Tools</a>
+                                            <ul>
+
+                                                <li {% block pdf-split-class %}{% endblock %} ><a href="/tools/split-pdf-online">Split PDF</a></li>
+                                                <li {% block pdf-class %}{% endblock %} ><a href="/tools/protect-pdf-online">Protect PDF</a></li>
+                                                <!--<li {% block bulk-class %}{% endblock %} ><a href="/tools/bulk-file-rename">Bulk File Rename</a></li>-->
+                                                <!--<li {% block image-class %}{% endblock %} ><a href="/tools/image-to-sketch">Image to Sketch</a></li>-->
+                                                <!--<li {% block black-white-class %}{% endblock %} ><a href="/tools/color-image-to-black-and-white-image">Color Image to B&W Image</a></li>-->
+                                                <!--<li {% block remove-background %}{% endblock %}><a href="/tools/remove-image-background">Remove Image Background (Beta)</a></li>-->
+                                                <li {% block youtube-embed-class %}{% endblock %}><a href="/tools/youtube-embed-code-generator">YouTube Embed Code Generator</a></li>
+
+                                            </ul>
+                                        </li>
+
+
+
+
+
+
+                                        <li {% block services-class %}{% endblock %} ><a href="/services">Offer</a>
+                                            <ul>
+                                                <li {% block web-development %}{% endblock %} ><a href="/services/web-development">Web Development</a></li>
+                                                <li {% block mobile-application %}{% endblock %} ><a href="/services/mobile-application">Mobile Application</a></li>
+                                                <li {% block desktop-application %}{% endblock %} ><a href="/services/desktop-application">Desktop Application</a></li>
+
+                                                <li {% block digital-marketing %}{% endblock %} ><a href="/services/digital-marketing">Digital Marketing</a></li>
+                                                <li {% block graphic-designing %}{% endblock %} ><a href="#">Graphic Designing</a></li>
+                                                <li {% block logo-designing %}{% endblock %} ><a href="#">Logo Designing</a></li>
+                                                <li {% block domain-registration %}{% endblock %} ><a href="#">Domain Registration</a></li>
+                                                <li {% block web-hosting %}{% endblock %} ><a href="#">Web Hosting</a></li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li {% block more-class %}{% endblock %}><a href="/about">More</a>
+                                            <ul>
+                                                <li {% block about-us-class %} {% endblock %} ><a href="/about/about-us">About Us</a></li>
+                                                <li {% block our-experts-class %} {% endblock %} ><a href="/about/our-experts">Our Experts</a></li>
+                                                <!--<li {% block vision-class %} {% endblock %} ><a href="/about/vision-mission-values">Vision / Mission / Values</a></li>-->
+
+                                                <li {% block portfolio-class %} {% endblock %}><a href="/portfolio">Portfolio</a></li>
+                                                <li class="portfolio"><a href="#">Blogs</a></li>
+                                                <li {% block contact-class %} {% endblock %} ><a href="/contact">Contact Us</a></li>
+                                            </ul>
+                                        </li>
+                                        {% if user.is_authenticated %}
+                                        <li><a href="">{{ user.username }}</a>
+                                            <ul>
+                                                <li><a href="">Logout</a></li>
+                                            </ul>
+                                        </li>
+                                        {% else %}
+                                        <li><a href="{% provider_login_url 'google' %}">Login</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            </div><!-- site-navigation end-->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- ttm-stickable-header-w end-->
+        </div><!--ttm-header-wrap end -->
+
+    </header><!--header end-->
+{% block body %} {% endblock %}
+    <!--footer start-->
+        <footer class="footer widget-footer clearfix">
+            <div class="first-footer ttm-bgcolor-skincolor ttm-bg ttm-bgimage-yes bg-img1">
+                <div class="ttm-row-wrapper-bg-layer ttm-bg-layer"></div>
+                <div class="container">
+                    <div class="row align-items-md-center">
+                        <div class="col-lg-4 col-md-4 col-sm-12 order-md-2">
+                            <div class="footer-logo text-sm-center">
+                                <img data-src="{% static 'image/footer-logo.png' %}" class="lazyload" alt="footer-logo">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 order-md-1">
+                            <div class="text-left">
+                                <!--  featured-icon-box -->
+                                <div class="featured-icon-box left-icon icon-align-top">
+                                    <div class="featured-icon"><!--  featured-icon -->
+                                        <div class="ttm-icon ttm-icon_element-color-white ttm-icon_element-size-md">
+                                            <i class="ti ti-location-pin"></i><!--  ttm-icon -->
+                                        </div>
+                                    </div>
+                                    <div class="featured-content"><!--  featured-content -->
+                                        <div class="featured-desc">
+                                            <p>Surat, Gujarat, India</p>
+                                        </div>
+                                    </div>
+                                </div><!--  featured-icon-box END -->
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 order-md-3">
+                            <div class="text-sm-right">
+                                <a class="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-icon-btn-left ttm-btn-color-white" href="mailto:sinbrostechnology@gmail.com" title=""> contact@sinbros.com <i class="fa fa-envelope-o"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="second-footer ttm-textcolor-white" style="background-color:#253044">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+                            <div class="widget widget_text  clearfix">
+                                <h3 class="widget-title">About Our Company</h3>
+                                <div class="textwidget widget-text">
+                                    Sinbros Technology is a best web solutions provider company in Surat, Gujarat, India. We are specialized in Customized Website, Digital marketing, Mobile App Development & Desktop App Development.
+                                </div>
+                                <div class="quicklink-box">
+                                    <!--  featured-icon-box -->
+                                    <div class="featured-icon-box left-icon">
+                                        <div class="featured-icon"><!--  featured-icon -->
+                                            <div class="ttm-icon ttm-icon_element-style-round ttm-icon_element-bgcolor-skincolor ttm-icon_element-size-md ttm-icon_element-style-round">
+                                                <span class="flaticon flaticon-clock"></span><!--  ttm-icon -->
+                                            </div>
+                                        </div>
+                                        <div class="featured-content"><!--  featured-content -->
+                                            <div class="featured-desc"><!--  featured-desc -->
+                                                <p>Talk To Our Support</p>
+                                            </div>
+                                            <div class="featured-title"><!--  featured-title -->
+                                                <h5>+91 7016871992</h5>
+                                            </div>
+                                        </div>
+                                    </div><!--  featured-icon-box END -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+                            <div class="widget link-widget clearfix">
+                               <h3 class="widget-title">Quick Links</h3>
+                                <ul id="menu-footer-services">
+                                    <li><a href="/services/">Website Development</a></li>
+                                    <li><a href="/services/mobile-application">Mobile Application</a></li>
+                                    <li><a href=/services/digital-marketing">Digital Marketing</a></li>
+                                    <li><a href="/about/">About Company</a></li>
+                                    <li><a href="#">Latest Blog</a></li>
+                                    <li><a href="#">Programming Blog</a></li>
+                                    <li><a href="/about/our-experts">Meet Our Experts</a></li>
+                                    <li><a href="/about/">Our Business Growth</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+                            <div class="widget widget_text clearfix">
+                                <h3 class="widget-title">Learn</h3>
+                                <ul class="widget-post ttm-recent-post-list">
+                                    <li>
+                                        <a href="/learn/competitive-programming"><img data-src="{%static 'image/competitive.jpg' %}" class="lazyload" alt="post-img"></a>
+                                        <a href="/learn/competitive-programming">Competitive Programming</a>
+                                        <span class="post-date"><i class="fa fa-calendar"></i>June 24, 2020</span>
+                                    </li>
+                                    <li>
+                                        <a href="/learn/basic-programming"><img data-src="{%static 'image/basic.jpg' %}" class="lazyload" alt="post-img"></a>
+                                        <a href="/learn/basic-programming">Basic Programming</a>
+                                        <span class="post-date"><i class="fa fa-calendar"></i>June 24, 2020</span>
+                                    </li>
+                                    <li>
+                                        <a href="/learn/pattern-programs"><img data-src="{%static 'image/pattern.jpg' %}" class="lazyload" alt="post-img"></a>
+                                        <a href="/learn/pattern-programs">Pattern Programs</a>
+                                        <span class="post-date"><i class="fa fa-calendar"></i>June 24, 2020</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+                            <div class="widget flicker_widget clearfix">
+                               <h3 class="widget-title">News Letter</h3>
+                               <div class="textwidget widget-text">
+                                    Sign up today for hints, tips and the latest product news
+                                    <form id="subscribe-form" class="newsletter-form" method="post" action="" data-mailchimp="true">
+                                        <div class="mailchimp-inputbox clearfix" id="subscribe-content">
+                                            <i class="fa fa-envelope"></i>
+                                            <input id="sub_email" type="email" name="email" placeholder="Email Address.." required="">
+                                            <input onclick="subscriber_insert()" type="submit" value="">
+                                        </div>
+                                        <div id="subscribe-msg"></div>
+                                    </form>
+                                    <h5 class="mb-20">Follow Us On</h5>
+                                    <div class="social-icons circle social-hover">
+                                        <ul class="list-inline">
+                                            <li class="social-instagram"><a class=" tooltip-top" target="_blank" href="https://www.instagram.com/sinbros_technology/" data-tooltip="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li class="social-facebook"><a class="tooltip-top" target="_blank" href="https://www.facebook.com/sinbrostechnology/" data-tooltip="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li class="social-twitter"><a class="tooltip-top" target="_blank" href="https://twitter.com/Sinbros1" data-tooltip="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li class="social-youtube"><a class=" tooltip-top" target="_blank" href="https://www.youtube.com/channel/UC77T7ntbw-D3MHl1HMmBJog" data-tooltip="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-footer-text ttm-bgcolor-darkgrey ttm-textcolor-white">
+                <div class="container">
+                    <div class="row copyright">
+                        <div class="col-md-6">
+                            <div class="">
+                                <span>Copyright © 2020&nbsp;<a href="https://www.sinbros.com">Sinbros</a></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-right res-767-mt-10">
+                                <div class="d-lg-inline-flex">
+                                    <ul id="menu-footer-menu" class="footer-nav-menu">
+                                        <li><a href="https://www.sinbros.com/about/">About Us</a></li>
+                                        <li><a href="https://www.sinbros.com/services/">Services</a></li>
+                                        <li><a href="https://www.sinbros.com/blog/">Blog</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer end-->
+
+        <!--back-to-top start-->
+        <a id="totop" href="#top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <!--back-to-top end-->
+
+    </div><!-- page end -->
+
+        <!-- Javascript -->
+        <!-- Javascript end-->
+
+</body>
+</html>
+<script src="{%static 'js/jquery.min.js' %}"></script>
+<script src="{%static 'js/tether.min.js' %}"></script>
+<script src="{%static 'js/bootstrap.min.js' %}"></script>
+<script src="{%static 'js/jquery.easing.js' %}"></script>
+<script src="{%static 'js/jquery-waypoints.js' %}"></script>
+<script src="{%static 'js/jquery-validate.js' %}"></script>
+<script src="{%static 'js/owl.carousel.js' %}"></script>
+<script src="{%static 'js/jquery.prettyPhoto.js' %}"></script>
+<script src="{%static 'js/numinate.min6959.js' %}"></script>
+<script src="{%static 'js/lazysizes.min.js' %}"></script>
+<script src="{%static 'js/main.js' %}"></script>
+
+<!-- Revolution Slider -->
+<script src="{%static 'revolution/js/revolution.tools.min.js' %}"></script>
+<script src="{%static 'revolution/js/rs6.min.js' %}"></script>
+<script src="{%static 'revolution/js/slider.js' %}"></script>
+<script>
+    $('img').on('dragstart', function(event) { event.preventDefault(); });
+$("body").on("contextmenu", "img", function(e) {
+  return false;
+});
+</script>
+{% block extra-js %}{% endblock %}

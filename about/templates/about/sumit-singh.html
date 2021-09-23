@@ -1,0 +1,367 @@
+{% extends 'content.html' %}
+{% load static %}
+{% block extra-css %}
+<link href="{%static 'lightbox/css/lightbox.css'%}" rel="stylesheet" />
+
+<script src="{%static 'lightbox/js/lightbox-plus-jquery.js'%}"></script>
+<style>
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 33%; /* IE10 */
+  flex: 33%;
+  max-width: 33%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+{% endblock %}
+
+{% block title %}Sumit Singh | Web Developer | Our Experts - Sinbros{% endblock %}
+{% block extra-head %}
+    <meta name="description" content="Sumit Singh is Team Leader / Website Developer & Designer. He is a Founder of Sinbros Technology and He is Winner of Many National Level & State Level Coding Competition. He have 40+ Awards of Progamming Competition." />
+    <meta name="keywords"  content="sumit singh,about sumit singh, who is sumit singh, sumit singh sinbros, sumit singh developer, sumit singh winner" />
+{% endblock %}
+{% block more-class %} class='active' {% endblock %}
+{% block our-experts-class %} class='active' {% endblock %}
+
+{% block body %}
+    <!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title">Sumit Singh</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="../"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>
+                                    <a title="Homepage" href="our-experts.php"><i class="ti ti-home"></i>&nbsp;&nbsp;Our Experts</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>Sumit Singh</span>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- page-title end-->
+
+        <!--site-main start-->
+        <div class="site-main">
+
+            <!-- team-details-section -->
+            <section class="ttm-row team-details-section clearfix">
+                <div class="container">
+                    <div class="row"><!-- row -->
+                        <div class="col-lg-4">
+                            <div class="ttm-featured-wrapper">
+                                <div class="featured-thumbnail text-center">
+                                    <img class="img-fluid" src="{%static 'image/sumit.jpg'%}" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="ttm-team-member-content shadow-box res-991-mt-30">
+                                <div class="ttm-team-member-single-list">
+                                    <h2 class="ttm-team-member-single-title">Sumit Singh</h2>
+                                    <span class="ttm-team-member-single-position">Team Leader / Website Developer & Designer / Founder of SINBROS</span>
+                                    <p style="text-align: justify;" >He is a Founder of Sinbros Technology and He is Winner of Many National Level & State Level Coding Competition. He have 40+ Awards of Progamming Competition.</p>
+                                    <p style="text-align: justify;">He is also Winner of Many Website Development & Designing Competition. He is Skilled in Programming Languages like C, C++, Java, Kotlin, DS, PHP, VB.NET, C#.NET, ASP.NET and Python.</p>
+                                    <p style="text-align: justify;">He is also Skilled in Many Web Development Framework like Django, Flask, Laravel and Codeigniter.</p>
+                                    <p style="text-align: justify;">
+                                        He is Front-End Developer, Back-End Developer, Mobile App Developer, Graphic Designer, Logo Designer and Blog Writer.
+                                    </p>
+                                    <!-- separator -->
+                                    <div class="separator">
+                                        <div class="sep-line mt-25 mb-25"></div>
+                                    </div>
+                                    <!-- separator -->
+                                    <div class="ttm-team-data">
+                                        <div class="ttm-team-details-wrapper">
+                                            <ul class="ttm-team-details-list clearfix">
+                                                <li>
+                                                    <div class="ttm-team-list-title"><i class="fa fa-phone"></i> Phone :</div>
+                                                    <div class="ttm-team-list-value"><a href="tel:+1800200145" tabindex="0">+91 7016871992</a></div>
+                                                </li>
+                                                <li>
+                                                    <div class="ttm-team-list-title"><i class="ti ti-email"></i> Email :</div>
+                                                    <div class="ttm-team-list-value"><a href="mailto:info@example.com">sumit@sinbros.com</a></div>
+                                                </li>
+                                                <li>
+                                                    <div class="ttm-team-list-title"><i class="ti ti-world"></i> Website :</div>
+                                                    <div class="ttm-team-list-value"><a target="_blank" href="https://www.sumit.sinbros.com/">www.sumit.sinbros.com</a></div>
+                                                </li>
+                                                <li>
+                                                    <div class="ttm-team-list-title"><i class="ti ti-time"></i> Experience :</div>
+                                                    <div class="ttm-team-list-value">5 Years</div>
+                                                </li>
+                                                <li>
+                                                    <div class="ttm-team-list-title"><i class="ti ti-calendar"></i> Since :</div>
+                                                    <div class="ttm-team-list-value">2015</div>
+                                                </li>
+                                                <li>
+                                                    <div class="ttm-team-list-title"><i class="ti ti-location-pin"></i> Address Info :</div>
+                                                    <div class="ttm-team-list-value">Surat, Gujarat, India</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- separator -->
+                                    <div class="separator">
+                                        <div class="sep-line mt-15 mb-25"></div>
+                                    </div>
+                                    <!-- separator -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row end -->
+                    <div class="row"><!-- row -->
+                        <div class="col-md-6">
+                            <!-- progress-bar -->
+                            <div class="ttm-progress-bar" data-percent="90%">
+                                <div class="progress-bar-title">Website Development</div><!-- progress-bar-title -->
+                                <div class="progress-bar-inner">
+                                    <div class="progress-bar progress-bar-color-bar_skincolor"></div>
+                                </div>
+                                <div class="progress-bar-percent" data-percentage="90">90%</div><!-- progress-bar-percent -->
+                            </div>
+                            <!-- progress-bar END -->
+                            <!-- progress-bar -->
+                            <div class="ttm-progress-bar" data-percent="80%">
+                                <div class="progress-bar-title">App Development</div><!-- progress-bar-TITLE -->
+                                <div class="progress-bar-inner">
+                                    <div class="progress-bar progress-bar-color-bar_skincolor"></div>
+                                </div>
+                                <div class="progress-bar-percent" data-percentage="80">80%</div><!-- progress-bar-PERCENT -->
+                            </div>
+                            <!-- progress-bar END -->
+                        </div>
+                        <div class="col-md-6">
+                            <!-- progress-bar -->
+                            <div class="ttm-progress-bar" data-percent="85%">
+                                <div class="progress-bar-title">Python Programming</div><!-- progress-bar-title -->
+                                <div class="progress-bar-inner">
+                                    <div class="progress-bar progress-bar-color-bar_skincolor"></div>
+                                </div>
+                                <div class="progress-bar-percent" data-percentage="85">85%</div><!-- progress-bar-percent -->
+                            </div>
+                            <!-- progress-bar END -->
+                            <!-- progress-bar -->
+                            <div class="ttm-progress-bar" data-percent="80%">
+                                <div class="progress-bar-title">Web Developement Framework</div><!-- progress-bar-TITLE -->
+                                <div class="progress-bar-inner">
+                                    <div class="progress-bar progress-bar-color-bar_skincolor"></div>
+                                </div>
+                                <div class="progress-bar-percent" data-percentage="80">80%</div><!-- progress-bar-PERCENT -->
+                            </div>
+                            <!-- progress-bar END -->
+                        </div>
+                    </div>
+                    <!-- row end -->
+                    <div class="row mt-40">
+                        <div class="col-12">
+                            <h4>Career Guidelines</h4>
+                            <p class="mb-40">He Completed his Graduation from SDJ Internation College, Veer Narmad South Gujarat Univercity. He has Above 5 Years of Experience in IT Industry. He is Winner of Many Nation, State and Inter College Level Programming Competition.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Contact Me</h4>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="member-info-box border mb-30">
+                                        <div class="timing-box">
+                                            <i class="ti ti-time"></i>
+                                            <h5>Working Time</h5>
+                                        </div>
+                                        <ul class="timing-list">
+                                            <li>
+                                                <span class="day">Monday - Friday :</span>
+                                                <span class="time">10.00AM - 06.00PM</span>
+                                            </li>
+                                            <li>
+                                                <span class="day">Saturday :</span>
+                                                <span class="time">10.00AM - 02.00PM</span>
+                                            </li>
+                                            <li>
+                                                <span class="day">Sunday :</span>
+                                                <span class="time">Closed</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="member-info-box border">
+                                        <div class="timing-box">
+                                            <i class="flaticon flaticon-developer"></i>
+                                            <h5>General Information</h5>
+                                        </div>
+                                        <ul class="info-list">
+                                            <li>
+                                                <i class="ti ti-location-pin"></i>
+                                                <span>Surat, Gujarat, India</span>
+                                            </li>
+                                            <li>
+                                                <i class="ti ti-mobile"></i>
+                                                <span>(+91) 7016871992</span>
+                                            </li>
+                                            <li>
+                                                <i class="ti ti-comment"></i>
+                                                <span>sumit@sinbros.com</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="member-contact-form border res-991-mt-30">
+                                        <form id="ttm-quote-form" class="row ttm-quote-form clearfix" method="post" action="#">
+                                            <div class="col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input name="name" type="text" class="form-control ttm-bgcolor-grey" placeholder="Full Name*" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input name="phone" type="text" placeholder="Phone Number*" required="required" class="form-control  ttm-bgcolor-grey">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input name="address" type="text" placeholder="Email Address*" required="required" class="form-control  ttm-bgcolor-grey">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input name="subject" type="text" placeholder="Subject" required="required" class="form-control  ttm-bgcolor-grey">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-12">
+                                                <div class="form-group">
+                                                    <textarea name="Massage" rows="6" placeholder="Write A Massage..." required="required" class="form-control  ttm-bgcolor-grey"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="text-left">
+                                                    <button type="submit" id="submit" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor" value="">
+                                                        Book An Appointment
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 20px">
+                        <div class="col-12">
+                            <h4>Gallery</h4>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="column">
+                                    <a href="{%static 'image/sumit/sumit (36).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (36).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (53).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (53).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (52).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (52).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (50).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (50).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (1).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (1).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (4).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (4).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (7).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (7).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (10).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (10).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (12).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (12).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (14).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (14).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (17).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (17).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (20).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (20).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (23).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (23).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (26).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (26).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (30).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (30).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (33).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (33).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (40).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (40).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (41).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (41).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (44).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (44).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (47).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (47).jpg'%}" alt="image"></a>
+
+
+                                </div>
+                                <div class="column">
+                                    <a href="{%static 'image/sumit/sumit (54).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (54).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (51).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (51).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (2).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (2).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (5).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (5).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (45).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (45).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (37).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (37).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (8).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (8).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (11).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (11).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (15).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (15).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (18).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (18).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (21).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (21).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (24).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (24).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (27).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (27).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (39).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (39).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (31).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (31).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (34).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (34).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (42).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (42).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (56).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (56).jpg'%}" alt="image"></a>
+
+                                </div>
+                                <div class="column">
+                                    <a href="{%static 'image/sumit/sumit (55).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (55).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (46).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (46).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (49).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (49).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (48).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (48).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (3).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (3).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (6).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (6).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (9).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (9).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (13).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (13).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (16).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (16).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (19).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (19).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (38).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (38).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (22).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (22).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (25).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (25).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (28).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (28).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (29).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (29).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (32).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (32).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (35).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (35).jpg'%}" alt="image"></a>
+                                    <a href="{%static 'image/sumit/sumit (43).jpg'%}" data-lightbox="mygallery"><img class="img-fluid" src="{%static 'image/sumit/sumit (43).jpg'%}" alt="image"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- team-details-section end -->
+
+        </div><!--site-main end-->
+{% endblock %}

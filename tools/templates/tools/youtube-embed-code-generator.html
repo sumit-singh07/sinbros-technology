@@ -1,0 +1,158 @@
+{% extends 'content.html' %}
+{% load static %}
+{% block title %}YouTube Embed Code Generator - Sinbros{% endblock %}
+{% block extra-head %}
+    <meta name="description" content="YouTube Embed Code Generator by SINBROS. By using this tool you can generate YouTube video embed code from YouTube video URL and You can you that embed code to show YouTube Video in your Website"/>
+    <meta name="keywords"  content="youtube embed code generator responsive,youtube embed code generator 2019,youtube embed code generator html5,youtube embedded code generator,advanced youtube embed code generator,youtube video embed code generator,online youtube embed code generator,youtube iframe code generator,youtube html embed code generator,valid html youtube embed code generator,embed youtube video html code generator,youtube embed code iframe generator,youtube embed url generator,youtube playlist embed code generator,youtube optimized embed code generator,youtube player embed code generator" />
+{% endblock %}
+
+{% block tools-class %} class='active' {% endblock %}
+{% block youtube-embed-class %} class='active' {% endblock %}
+
+{% block body %}
+    <!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title">YouTube Embed Code Generator</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="index.php"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span><a title="Tools" href="">Tools</a></span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>YouTube Embed Code Generator</span>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- page-title end-->
+        <!--site-main start-->
+        <div class="site-main">
+
+            <!-- services-slide-section -->
+            <section class="ttm-row contact-section clearfix">
+                <div class="container">
+                    <div class="row"><!-- row -->
+                        <div class="col-lg-8 offset-lg-2">
+                            <!-- section-title -->
+                            <div class="section-title with-desc text-center clearfix">
+                                <div class="title-header">
+                                    <h5>Generate</h5>
+                                    <h2 class="title">YouTube Embed Code</h2>
+                                </div>
+                            </div><!-- section-title end -->
+                        </div>
+                    </div>
+                    <!-- row end -->
+                    <!-- row -->
+                    <form id="ttm-quote-form" class="row ttm-quote-form clearfix" method="post" action="#">
+                        <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <label>YouTube URL</label>
+                                            <input id="youtube-url" name="youtube-url" type="text" class="form-control bg-white border" placeholder="Enter YouTube Video URL" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <label>Width</label>
+                                            <input id="width" name="width" type="text" placeholder="Eg. 800" required="required" class="form-control bg-white border">
+                                        </div>
+                                    </div><br><br>
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <label>Height</label>
+                                            <input id="height" name="height" type="text" placeholder="Eg. 480" required="required" class="form-control bg-white border">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="text-left">
+                                            <button  type="submit" onclick="youtube()" name="add_contact" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor">
+                                                Submit
+                                            </button>
+                                            <button id="reset" type="reset" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor">
+                                                Reset
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <div id="embed_div" class="col-sm-12 col-md-12" style="margin-top: 40px">
+                                        <div class="form-group">
+                                            <label>YouTube Embed Code Generated</label><br>
+                                            <a href="javascript:void(0)" id="copy" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor">Copy</a>
+
+                                            <textarea id="embed" name="embed" rows="5" placeholder="YouTube Embed Code..." class="form-control bg-white border"></textarea>
+                                        </div>
+                                        <div id="embed_video" class="col-sm-12 col-md-12">
+
+                                        </div>
+                                    </div>
+
+                    </form>
+                    <!-- row end-->
+                </div>
+            </section>
+            <!-- services-slide-section end -->
+
+
+
+        </div><!--site-main end-->
+{% endblock %}
+{% block extra-js %}
+    <script>
+    $("#embed_div").hide();
+
+    $('#reset').click(function(){
+        $("#embed_div").hide();
+    });
+
+    function youtube()
+    {
+        event.preventDefault();
+        var youtube = $('#youtube-url').val();
+        var width = $('#width').val();
+        var height = $('#height').val();
+
+        if(youtube=="" || width=="" || height=="")
+        {
+            alert('Enter All Input Box');
+        }
+        else
+        {
+            if(youtube.includes('https://youtu.be/'))
+            {
+                var id = youtube.replace('https://youtu.be/','');
+            }
+            else if(youtube.includes('https://www.youtube.com/watch?v='))
+            {
+                var id = youtube.replace('https://www.youtube.com/watch?v=','');
+                var id = id.replace('&feature=youtu.be','');
+
+            }
+            else
+            {
+                var id = youtube.replace('https://www.youtube.com/watch?v=','');
+            }
+
+            var embed_code = '<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="'+width+'" height="'+height+'" type="text/html" src="https://www.youtube.com/embed/'+id+'?autoplay=0&origin=https://sinbros.com"></iframe>';
+
+            $("#embed_div").show();
+            $("#embed").val(embed_code);
+            $('#embed_video').html(embed_code);
+
+            $('#copy').click(function(){
+                $(this).siblings('#embed').select();
+                document.execCommand("copy");
+            });
+        }
+    }
+</script>
+
+{% endblock %}

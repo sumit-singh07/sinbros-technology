@@ -1,0 +1,131 @@
+{% extends 'content.html' %}
+{% load static %}
+{% block title %}Convert Image to Sketch - Sinbros{% endblock %}
+{% block extra-head %}
+    <meta name="description" content="Conver Image to Sketch Online"/>
+    <meta name="keywords"  content="image to sketch,image to sketch online,convert image to sketch,convert image to sketch online,image to sketch python,edit image online, online image edit" />
+{% endblock %}
+
+{% block tools-class %} class='active' {% endblock %}
+{% block image-class %} class='active' {% endblock %}
+
+
+{% block body %}
+    <!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title">Image to Sketch</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="index.php"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span><a title="Tools" href="">Tools</a></span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>Image to Sketch</span>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- page-title end-->
+        <!--site-main start-->
+        <div class="site-main">
+
+            <!-- services-slide-section -->
+            <section class="ttm-row contact-section clearfix">
+                <div class="container">
+                    <div class="row"><!-- row -->
+                        <div class="col-lg-8 offset-lg-2">
+                            <!-- section-title -->
+                            <div class="section-title with-desc text-center clearfix">
+                                <div class="title-header">
+                                    <h5>Convert</h5>
+                                    <h2 class="title">Image to Sketch</h2>
+                                </div>
+                            </div><!-- section-title end -->
+                        </div>
+                    </div>
+                    <!-- row end -->
+                    <!-- row -->
+                    <form id="ttm-quote-form" class="row ttm-quote-form clearfix" action="../image-to-sketch/" enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+                        <div class="col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <label>Select Image</label>
+                                <input onchange="readURL(this);" id="select-image" name="select-image" type="file" class="form-control bg-white border" required="required">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <div class="text-left">
+                                {% if image1 %}
+                                <button  type="submit" id="preview-temp" name="add_contact" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor">
+                                    Preview
+                                </button>
+                                {% endif %}
+                                <button  type="submit" id="preview" name="add_contact" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor">
+                                    Preview
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <img id = "pro_img" src="{{image1}}" Width="100%" style="border:1px solid black" class="ïmg-responsive" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <div class="text-left">
+                                {% if image2 %}
+                                <a id="download" href="{{image2}}" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor" download>
+                                    Download
+                                </a>
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {% if image2 %}
+                                <img id = "pro_img2" src="{{image2}}" Width="100%" style="border:1px solid black" class="ïmg-responsive" />
+                                {% endif %}
+                            </div>
+                        </div>
+
+
+
+
+                    </form>
+                    <!-- row end-->
+                </div>
+            </section>
+            <!-- services-slide-section end -->
+
+
+
+        </div><!--site-main end-->
+{% endblock %}
+{% block extra-js %}
+    <script>
+
+    $("#preview").hide();
+    $("#preview-temp").prop('disabled', true);
+
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#pro_img')
+                    .attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+                var filename = $('input[type=file]').val().split('\\').pop();
+            }
+            $("#preview").show();
+            $("#preview-temp").hide();
+        }
+    </script>
+
+{% endblock %}

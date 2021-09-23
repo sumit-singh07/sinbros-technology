@@ -1,0 +1,160 @@
+{% extends 'content.html' %}
+{% load static %}
+{% block title %}Protect PDF Online - Sinbros{% endblock %}
+{% block extra-head %}
+    <meta name="description" content="Protect PDF Online"/>
+    <meta name="keywords"  content="Protect PDF Online, Protect pdf, give password to pdf, how to protect pdf online, online give password to pdf,pdf protection, pdf protection online" />
+{% endblock %}
+
+{% block tools-class %} class='active' {% endblock %}
+{% block pdf-class %} class='active' {% endblock %}
+{% block extra-css %}
+<style>
+.loader {
+  border: 4px solid #263045;
+  border-radius: 50%;
+  border-top: 4px solid #f3f3f3;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+{% endblock %}
+
+
+{% block body %}
+    <!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title">Protect PDF Online</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="index.php"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span><a title="Tools" href="">Tools</a></span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>Protect PDF</span>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- page-title end-->
+        <!--site-main start-->
+        <div class="site-main">
+
+            <!-- services-slide-section -->
+            <section class="ttm-row contact-section clearfix">
+                <div class="container">
+                    <!-- row -->
+                    <form id="ttm-quote-form" class="row ttm-quote-form clearfix" action="../protect-pdf-online/" enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+                        <div class="col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <label>Select PDF File</label>
+                                <input accept="application/pdf" onchange="readURL(this);" id="select-pdf" name="select-pdf" type="file" class="form-control bg-white border" required="required">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12" id="password-div">
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input id="pdf-password" name="pdf-password" type="password" placeholder="Enter PDF Protection Password" class="form-control bg-white border" required="required">
+                                <input type="checkbox" onclick="myFunction()">Show Password
+                            </div>
+
+                            <div class="form-group">
+                                <button  type="submit" id="protect" name="protect" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor">
+                                    Protect
+                                </button>
+                            </div>
+
+
+                        </div>
+                        {% if file %}
+
+                        <div class="col-sm-12 col-md-12" id="download">
+                            <div class="alert alert-success">
+                              <strong>Success!</strong> File Protected Successfully <br>Download Your Protected File from Download Button
+                            </div>
+                            <a href="{{file}}" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor" download>
+                                Download Protected File
+                            </a>
+                        </div>
+                        {% endif %}
+
+
+
+                    </form>
+                    <!-- row end-->
+                </div>
+            </section>
+            <!-- services-slide-section end -->
+
+
+
+        </div><!--site-main end-->
+{% endblock %}
+{% block extra-js %}
+    <script>
+
+    $("#password-div").hide();
+    $("#download").show();
+
+    function myFunction() {
+      var x = document.getElementById("pdf-password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            $("#password-div").show();
+            $("#download").hide();
+        }
+    }
+    $('#protect').click(function(){
+        $('#protect').text('Protecting');
+
+        var text = ["Protecting.", "Protecting..", "Protecting..."];
+        var counter = 0;
+        var elem = document.getElementById("protect");
+        var inst = setInterval(change, 1000);
+
+        function change() {
+          elem.innerHTML = text[counter];
+          counter++;
+          if (counter >= text.length) {
+            counter = 0;
+            // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+          }
+        }
+
+    });
+    </script>
+
+
+
+
+{% endblock %}

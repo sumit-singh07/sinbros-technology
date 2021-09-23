@@ -1,0 +1,157 @@
+{% extends 'content.html' %}
+{% load static %}
+{% block title %}Rename Multiple Files Online - Sinbros{% endblock %}
+{% block extra-head %}
+    <meta name="description" content="Rename Multiple Files Online"/>
+    <meta name="keywords"  content="bulk rename,bulk rename online,multiple file rename,rename multiple files online" />
+{% endblock %}
+
+{% block tools-class %} class='active' {% endblock %}
+{% block bulk-class %} class='active' {% endblock %}
+
+
+{% block body %}
+    <!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title">Bulk Rename</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="index.php"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span><a title="Tools" href="">Tools</a></span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>Bulk Rename</span>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- page-title end-->
+        <!--site-main start-->
+        <div class="site-main">
+
+            <!-- services-slide-section -->
+            <section class="ttm-row contact-section clearfix">
+                <div class="container">
+
+                    <!-- row -->
+                    <form id="ttm-quote-form" class="row ttm-quote-form clearfix" action="../bulk-file-rename/" enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+                        <div class="col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <label>Select Files Only</label>
+                                <input onchange="readURL(this);" id="files" name="select-image" type="file" class="form-control bg-white border" required="required" multiple>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <p id="fp"></p>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6" id="bulk-form">
+
+
+                            <div class="form-group">
+                                <label>Prefix</label>
+                                <input id="prefix" name="prefix" type="text" placeholder="Enter Prefix" class="form-control bg-white border">
+                            </div>
+                            <div class="form-group">
+                                <label>File Name</label>
+                                <input id="filename" name="filename" type="text" placeholder="Enter File Name" class="form-control bg-white border">
+                            </div>
+                            <div class="form-group">
+                                <label>Suffix</label>
+                                <input id="suffix" name="suffix" type="text" placeholder="Enter Suffix" class="form-control bg-white border">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Enter Full Path of Selected Files </label>
+                                <input id="path" name="path" type="text" placeholder="Eg. D:\folder\" class="form-control bg-white border" required="required">
+                            </div>
+
+                            <div class="text-left">
+                                <button  type="submit" id="submit" name="submit" class="ttm-btn ttm-btn-size-md ttm-btn-bgcolor-skincolor">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <!-- row end-->
+                </div>
+            </section>
+            <!-- services-slide-section end -->
+
+
+
+        </div><!--site-main end-->
+{% endblock %}
+{% block extra-js %}
+    <script>
+    $('#bulk-form').hide();
+    function readURL(input) {
+        var fi = document.getElementById('files');
+        if (fi.files.length > 0) {
+            $('#bulk-form').show();
+            document.getElementById('fp').innerHTML = 'Total Files: <b>' + fi.files.length + '</b></br >';
+
+            // RUN A LOOP TO CHECK EACH SELECTED FILE.
+            for (var i = 0; i <= fi.files.length - 1; i++) {
+
+                var fname = fi.files.item(i).name;      // THE NAME OF THE FILE.
+                var output = fname.substr(0, fname.lastIndexOf('.')) || fname; //file name without extension
+
+                // SHOW THE EXTRACTED DETAILS OF THE FILE.
+                document.getElementById('fp').innerHTML =
+                    document.getElementById('fp').innerHTML + '<br /> ' +
+                        fname ;
+            }
+        }
+        else {
+            alert('Please select a file.')
+            $('#bulk-form').hide();
+            document.getElementById('fp').innerHTML ="";
+        }
+
+
+    }
+
+
+    $('#prefix,#suffix,#filename').on('input',function(e){
+        var prefix = $('#prefix').val();
+        var suffix = $('#suffix').val();
+        var filename = $('#filename').val();
+
+        $('#fp').val('');
+        var fi = document.getElementById('files');
+        document.getElementById('fp').innerHTML = 'Total Files: <b>' + fi.files.length + '</b></br >';
+
+        // RUN A LOOP TO CHECK EACH SELECTED FILE.
+        for (var i = 0; i <= fi.files.length - 1; i++) {
+            var fname = fi.files.item(i).name;      // THE NAME OF THE FILE.
+            var fnameonly = fname.substr(0, fname.lastIndexOf('.')) || fname; //file name without extension
+            var ex = fname.replace(fnameonly,'');
+
+            if(filename!="")
+            {
+                fnameonly=filename+' ('+(i+1)+')';
+            }
+
+            // SHOW THE EXTRACTED DETAILS OF THE FILE.
+            document.getElementById('fp').innerHTML =
+                document.getElementById('fp').innerHTML + '<br /> ' + prefix +fnameonly + suffix + ex;
+
+        }
+
+    });
+
+    </script>
+
+{% endblock %}

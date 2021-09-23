@@ -1,0 +1,188 @@
+{% extends 'content.html' %}
+{% load static %}
+{% block title %}{{ learn.0.learn_category }} - Sinbros{% endblock %}
+{% block extra-head %}
+    <meta name="description" content="Learn Competitive Programming, Basic Programming and Pattern Programms." />
+    <meta name="keywords"  content="Learn Competitive Programming, Basic Programming and Pattern Programms, google coding interview questions,google interview, facebook interview, coding interview, programming interview, mnc company interview" />
+{% endblock %}
+{% block learn-class %} class='active' {% endblock %}
+
+{% block basic-programming-class %}
+{% if basic_category %}
+class='active'
+{% endif %}
+{% endblock %}
+
+{% block competitive-programming-class %}
+{% if competitive_category %}
+class='active'
+{% endif %}
+{% endblock %}
+
+{% block pattern-programs-class %}
+{% if pattern_category %}
+class='active'
+{% endif %}
+{% endblock %}
+
+{% block extra-css %}
+<style>
+    .pagination{
+        text-align:center;
+        margin-top:1em;
+    }
+    .pagination-action{
+        line-height:40px;
+        height:42px;
+        width:30px;
+        color: gray;
+        text-align: center;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 500;
+        border: 1px solid #f8f9fa;
+        border-radius: 0;
+        margin: 0 0px;
+        padding: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .pagination-action:hover{
+        background-color:#2d4a8a;
+        color:white;
+    }
+
+    .pagination-number{
+        line-height:40px;
+        height:40px;
+        width:40px;
+        text-align: center;
+        display: inline-block;
+        background-color:#4a72ca;
+        color:white;
+        font-size: 15px;
+        font-weight: 500;
+        border: 1px solid #f8f9fa;
+        border-radius: 0;
+        margin: 0 0px;
+        padding: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .pagination-number:hover, .pagination-current{
+        background-color:#2d4a8a;
+        color:white;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title">{{ learn.0.learn_category }}</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="/"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>{{ learn.0.learn_category }}</span>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- page-title end-->
+
+        <!--site-main start-->
+        <div class="site-main">
+            <!-- blog-section end -->
+            <section class="ttm-row grid-section ttm-bgcolor-grey clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="products-result-count">Showing {{start}}-{{end}} of {{total}} results</p>
+                        </div>
+                    </div>
+                    <!-- row -->
+                    <div class="row">
+
+                        {% for i in learn %}
+                        <div class="col-lg-4 col-md-6">
+                            <!-- featured-imagebox-blog -->
+                            <a href="{% url 'ViewCompetitiveProgramming' learn_url=i.learn_url  %}">
+                            <div class="featured-imagebox featured-imagebox-blog style2 mb-30">
+                                <div class="featured-thumbnail"><!-- featured-thumbnail -->
+                                    <img class="img-fluid" src="/media/{{i.learn_image}}" alt="">
+
+                                </div>
+                                <div class="featured-content"><!-- featured-content -->
+                                    <!--<div class="ttm-box-post-date">&lt;!&ndash; ttm-box-post-date &ndash;&gt;-->
+                                        <!--<span class="ttm-entry-date">-->
+                                            <!--<time class="entry-date" datetime="2019-01-16T07:07:55+00:00">{{ i.learn_date|date:"d" }}<span class="entry-month entry-year">{{ i.learn_date|date:"M" }}</span></time>-->
+                                        <!--</span>-->
+                                    <!--</div>-->
+                                    <div class="featured-title"><!-- featured-title -->
+                                        <h5><a href="{% url 'ViewCompetitiveProgramming' learn_url=i.learn_url  %}">{{i.learn_title}}</a></h5>
+                                    </div>
+                                    <div class="post-meta"><!-- post-meta -->
+                                        <!--<span class="ttm-meta-line"><i class="fa fa-comments"></i>2,comments</span>-->
+                                        <span class="ttm-meta-line"><i class="fa fa-user"></i>Admin</span>
+                                    </div>
+                                </div>
+                            </div><!-- featured-imagebox-blog end -->
+                            </a>
+                        </div>
+
+                        {% endfor %}
+                    </div><!-- row end -->
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="ttm-pagination pagination">
+                                <!--{% if learn.has_previous %}-->
+                                    <!--<a class="next page-numbers" href="?page=1"><<</a>-->
+                                    <!--<a class="next page-numbers" href="?page={{ learn.previous_page_number }}"><</a>-->
+                                <!--{% endif %}-->
+
+                                <!--<a class="current">-->
+                                    <!--Page {{ learn.number }} of {{ learn.paginator.num_pages }}.-->
+                                <!--</a>-->
+
+                                <!--{% if learn.has_next %}-->
+                                    <!--<a class="next page-numbers" href="?page={{ learn.next_page_number }}">></a>-->
+                                    <!--<a class="next page-numbers" href="?page={{ learn.paginator.num_pages }}">>></a>-->
+                                <!--{% endif %}-->
+                                {% if learn.has_previous %}
+                                    <a class="pagination-action" href="?page=1"><i class="fa fa-angle-double-left"></i></a>
+                                    <a class="pagination-action" href="?page={{ learn.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+                                {% endif %}
+
+                                {% for num in learn.paginator.page_range %}
+                                    {% if learn.number == num %}
+                                        <span class="pagination-number pagination-current" >{{num}}</span>
+                                    {% elif num > learn.number|add:'-3' and num < learn.number|add:'3' %}
+                                        <a class="pagination-number" href="?page={{num}}">{{num}}</a>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if learn.has_next %}
+                                    <a class="pagination-action" href="?page={{ learn.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+                                    <a class="pagination-action" href="?page={{ learn.paginator.num_pages }}"><i class="fa fa-angle-double-right"></i></a>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- sidebar -->
+
+        <!-- sidebar end -->
+    </div><!--site-main end-->
+
+{% endblock %}

@@ -1,0 +1,246 @@
+{% extends 'content.html' %}
+{% load static %}
+{% block title %}Face Detection Using OpenCV Python - Sinbros{% endblock %}
+{% block extra-head %}
+    <meta name="description" content="Face Detection Using OpenCV Python." />
+    <meta name="keywords"  content="{Face Detection Using OpenCV Python,learn python, learn python programming, learn python online, learn programming online,Learn Competitive Programming, Basic Programming and Pattern Programms, google coding interview questions,google interview, facebook interview, coding interview, programming interview, mnc company interview" />
+{% endblock %}
+{% block learn-class %} class='active' {% endblock %}
+{% block python-class %} class='active' {% endblock %}
+
+
+{% block extra-css %}
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sons-of-obsidian"></script>
+{% endblock %}
+{% block body %}
+    <!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title">Face Detection</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="index.php"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span><a title="{{ learn.0.learn_category }}" href="/learn/python">Learn Python</a></span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>Face Detection</span>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- page-title end-->
+
+        <!--site-main start-->
+        <div class="site-main">
+        <!-- sidebar -->
+        <div class="sidebar ttm-bgcolor-white clearfix">
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-9 content-area">
+                        <!-- ttm-service-single-content-are -->
+                        <article class="post ttm-blog-single clearfix">
+                            <!-- post-featured-wrapper -->
+                            <div class="ttm-post-featured-wrapper">
+                                <div class="ttm-post-featured">
+                                    <img  class="img-fluid" src="{% static 'image/blog/face-detection.png' %}" alt="post-01">
+                                </div>
+                            </div><!-- post-featured-wrapper end -->
+                            <!-- ttm-blog-classic-content -->
+
+
+                            <div class="ttm-blog-single-content">
+                                <div class="entry-content">
+                                    <div class="ttm-post-entry-header">
+                                        <div class="post-meta">
+                                            <span class="ttm-meta-line byline"><i class="fa fa-user"></i>By Admin</span>
+                                            <span class="ttm-meta-line entry-date"><i class="fa fa-calendar"></i><time class="entry-date published" datetime="2018-07-28T00:39:29+00:00">Jul 07, 2020</time></span>
+                                        </div>
+                                    </div>
+                                    <!-- separator -->
+                                    <div class="separator">
+                                        <div class="sep-line mt-15 mb-25"></div>
+                                    </div>
+                                    <!-- separator -->
+
+                                    <h4>Face Detection Using OpenCV Python</h4>
+                                    <p style="text-align:justify">First Download <a href="https://www.sinbros.com/static/learn/haarcascade_frontalface_default.xml" download>Haar Cascade Frontal Face xml File.</a></p><a href="https://www.sinbros.com/static/learn/haarcascade_frontalface_default.xml" download> Download Link</a>
+
+
+									<!-- separator -->
+                                    <div class="separator">
+                                        <div class="sep-line mt-15 mb-25"></div>
+                                    </div>
+                                    <!-- separator -->
+									<h5>Detect Faces in Image</h5>
+									<div class="row">
+										<div class="col-sm-12">
+											<pre class="prettyprint" style="padding: 10px"><code style="font-size:14px;">import cv2
+
+# Load the cascade
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+# Read the input image
+img = cv2.imread('3.jpg')
+
+# Convert into grayscale
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Detect faces
+faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+
+# Draw rectangle around the faces
+for (x, y, w, h) in faces:
+    cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
+
+# Display the output
+cv2.imshow('img', img)
+cv2.waitKey()
+											</code></pre>
+										</div>
+									</div>
+
+									<br>
+                                    <h5>Detect Faces in Video</h5>
+									<div class="row">
+										<div class="col-sm-12">
+											<pre class="prettyprint" style="padding: 10px"><code style="font-size:14px;">import cv2
+
+# Load the cascade
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+# To use a video file as input
+cap = cv2.VideoCapture('filename.mp4')
+
+while True:
+    # Read the frame
+    _, img = cap.read()
+
+    # Convert to grayscale
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    # Detect the faces
+    faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+
+    # Draw the rectangle around each face
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
+
+    # Display
+    cv2.imshow('img', img)
+
+    # Stop if escape key is pressed
+    k = cv2.waitKey(30) & 0xff
+    if k==27:
+        break
+
+# Release the VideoCapture object
+cap.release()
+											</code></pre>
+										</div>
+									</div>
+                                    <br>
+
+
+                                    <h5>Real Time Face Detection(Using Web Camera)</h5>
+									<div class="row">
+										<div class="col-sm-12">
+											<pre class="prettyprint" style="padding: 10px"><code style="font-size:14px;">import cv2
+
+# Load the cascade
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+# To capture video from webcam.
+cap = cv2.VideoCapture(0)
+
+while True:
+    # Read the frame
+    _, img = cap.read()
+
+    # Convert to grayscale
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    # Detect the faces
+    faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+
+    # Draw the rectangle around each face
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
+
+    # Display
+    cv2.imshow('img', img)
+
+    # Stop if escape key is pressed
+    k = cv2.waitKey(30) & 0xff
+    if k==27:
+        break
+
+# Release the VideoCapture object
+cap.release()
+											</code></pre>
+										</div>
+									</div>
+                                </div>
+                            </div><!-- ttm-blog-classic-content end -->
+                        </article>
+                        <!-- ttm-service-single-content-are end -->
+                    </div>
+                    <div class="col-lg-3 widget-area">
+
+                        <aside class="widget widget-categories">
+                            <h3 class="widget-title">Categories</h3>
+                            <ul>
+                                <li><a href="/learn/competitive-programming">Competitive Programming</a></li>
+                                <li><a href="/learn/basic-programming">Basic Programming</a></li>
+                                <li><a href="/learn/pattern-programs">Pattern Programs</a></li>
+                            </ul>
+                        </aside>
+                        <aside class="widget post-widget">
+                            <h3 class="widget-title">Latest Post</h3>
+                            <ul class="widget-post ttm-recent-post-list">
+                                {% for i in latest_learn %}
+                                <li>
+                                    <a href="{% url 'ViewCompetitiveProgramming' learn_url=i.learn_url  %}"><img src="/media/{{i.learn_image}}" alt="post-img"></a>
+                                    <a href="{% url 'ViewCompetitiveProgramming' learn_url=i.learn_url  %}">{{i.learn_title}}</a>
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+                        </aside>
+                        <aside class="widget widget widget_media_gallery">
+                            <a href="/portfolio"><h3 class="widget-title">Portfolio</h3></a>
+                            <div class="">
+                                {% for i in portfolio %}
+                                <div class="gallery-item">
+                                    <a href="/portfolio"><img src="/media/{{i.portfolio_image}}" class="img-fluid" alt="blog-img"></a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </aside>
+                        <aside class="widget widget-categories">
+                            <h3 class="widget-title">Services</h3>
+                            <ul>
+                                <li class="web-development" ><a href="/services/web-development">Web Development</a></li>
+                                <li class="mobile-application" ><a href="/services/mobile-application">Mobile Application</a></li>
+                                <li class="desktop-application" ><a href="/services/desktop-application">Desktop Application</a></li>
+                                <li class="digital-marketing" ><a href="/services/digital-marketing">Digital Marketing</a></li>
+                                <li class="graphic-designing" ><a href="#">Graphic Designing</a></li>
+                                <li class="logo-designing" ><a href="#">Logo Designing</a></li>
+                                <li class="domain-registration" ><a href="#">Domain Registration</a></li>
+                                <li class="web-hosting" ><a href="#">Web Hosting</a></li>
+                            </ul>
+
+                    </div>
+                </div><!-- row end -->
+            </div>
+        </div>
+        <!-- sidebar end -->
+    </div><!--site-main end-->
+{% endblock %}
